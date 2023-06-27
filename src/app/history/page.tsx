@@ -16,6 +16,8 @@ const fetchHistory = async (): Promise<History[]> => {
 export default async function HistoryPage() {
   const data = await fetchHistory()
 
+  console.log('Building from server')
+
   return (
     <ul className='flex w-full flex-col gap-2 p-2'>
       {data.map(({ data, id }) => (
