@@ -1,0 +1,1 @@
+export { PersonalAddress } from './PersonalAddress'

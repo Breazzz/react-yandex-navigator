@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+  box-shadow: 2px 0 2px 0 rgba(0,0,0,.1);
+  min-width: 400px;
+}
+
+.side-inner {
+  border-bottom: 8px solid #f6f6f6;
+  padding-bottom: 20px;
+}
+
+.map {
+  width: 100%;
+  @apply h-screen;
+}
+
+.button {
+  background: red!important;
+}
