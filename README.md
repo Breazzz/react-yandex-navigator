@@ -14,7 +14,7 @@ Created by [breazzz](https://github.com/Breazzz)
 
 ---
 
-# [View a demo](https://github.com/Breazzz)
+# [View a demo](https://react-yandex-navigator.netlify.app/)
 
 <img width="520" src="./public/yamap.gif" >
 
