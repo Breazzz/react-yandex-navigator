@@ -13,6 +13,7 @@ export const Autocomplete: React.FC<{ name: string; value: string }> = ({
   value,
 }) => {
   const [query, setQuery] = useState<string>('')
+  const [selected, setSelected] = useState<boolean>(false)
 
   const { suggestions } = useAppSelector((state) => state.suggest)
   const { from, to } = useAppSelector((state) => state.suggest)
@@ -27,7 +28,7 @@ export const Autocomplete: React.FC<{ name: string; value: string }> = ({
   }, [from, to])
 
   useEffect(() => {
-    if (debounced) {
+    if (debounced && !selected) {
       dispatch(getSuggestions(debounced))
     }
   }, [debounced, dispatch])
@@ -43,6 +44,7 @@ export const Autocomplete: React.FC<{ name: string; value: string }> = ({
   }
 
   const handleSelectSuggestion = (suggestion: string): void => {
+    setSelected(true)
     const fullSuggest = suggestions.find(
       (suggest) => suggest.value === suggestion,
     )
@@ -59,6 +61,7 @@ export const Autocomplete: React.FC<{ name: string; value: string }> = ({
         onSearch={handleInputChange}
         value={query}
         placeholder={name === 'from' ? 'Откуда' : 'Куда'}
+        onFocus={() => setSelected(false)}
       />
     </div>
   )

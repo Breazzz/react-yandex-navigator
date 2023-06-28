@@ -1,11 +1,17 @@
+import dynamic from 'next/dynamic'
 import { Inter } from 'next/font/google'
 
+import { SplashScreen } from '@/components/Splash'
 import { Providers } from '@/store/provider'
-import { Sidebar } from '@/modules/Sidebar'
 
 import './globals.scss'
 
 const inter = Inter({ subsets: ['latin'] })
+
+const Sidebar = dynamic(
+  () => import('@/modules/Sidebar').then((module) => module.Sidebar),
+  { ssr: false, loading: () => <SplashScreen /> },
+)
 
 export const metadata = {
   title: 'React Yandex Navigator',
