@@ -59,8 +59,8 @@ The directory name is the same as the component name.
 File `index.ts` contains only the necessary exports.
 
 ```tsx
-export { SampleComponent } from './SampleComponent';
-export { SampleComponentProps } from './SampleComponent/SampleComponent.types';
+export { SampleComponent } from './SampleComponent'
+export { SampleComponentProps } from './SampleComponent/SampleComponent.types'
 ```
 
 ### Function naming inside
@@ -78,14 +78,12 @@ function descriptions: `set`, `get`, `update`, etc., for example: `getSamplePara
 
 ### Order of imports (blocks are separated by an empty line)
 
-```
-1) React, {hooks}, libs
-2) components
-3) utils/helpers/hooks/constants/redux/mocks
-4) types/interface's
-5) styles
-6) images
-```
+- React, {hooks}, libs
+- components
+- utils/helpers/hooks/constants/redux/mocks
+- types/interface's
+- styles
+- images
 
 ## Getting Started
 
